@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="newsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="340" rx="14" fill="url(#newsBg)"/>
+  <g transform="translate(40, 25)">
+    <rect width="520" height="290" rx="10" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="25" cy="20" r="5" fill="#ef4444"/><circle cx="42" cy="20" r="5" fill="#f59e0b"/><circle cx="59" cy="20" r="5" fill="#10b981"/>
+    <rect x="85" y="12" width="220" height="16" rx="8" fill="#1e293b"/>
+    <line x1="0" y1="38" x2="520" y2="38" stroke="#334155" stroke-width="1"/>
+    <!-- News Feed UI -->
+    <rect x="25" y="55" width="470" height="50" rx="8" fill="#1e293b"/>
+    <rect x="40" y="68" width="180" height="12" rx="4" fill="#38bdf8"/>
+    <rect x="40" y="85" width="280" height="8" rx="3" fill="#64748b"/>
+    <!-- Multi source cards -->
+    <rect x="25" y="120" width="225" height="145" rx="8" fill="#1e293b"/>
+    <rect x="38" y="135" width="199" height="70" rx="6" fill="#334155"/>
+    <rect x="38" y="215" width="120" height="10" rx="3" fill="#cbd5e1"/>
+    <rect x="38" y="232" width="60" height="8" rx="3" fill="#6366f1"/>
+    <rect x="270" y="120" width="225" height="145" rx="8" fill="#1e293b"/>
+    <rect x="283" y="135" width="199" height="70" rx="6" fill="#334155"/>
+    <rect x="283" y="215" width="120" height="10" rx="3" fill="#cbd5e1"/>
+    <rect x="283" y="232" width="60" height="8" rx="3" fill="#10b981"/>
+  </g>
+</svg>

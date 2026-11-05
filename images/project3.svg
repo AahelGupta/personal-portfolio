@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" rx="16" fill="url(#p3Grad)"/>
+
+  <!-- Task Management Board Mockup -->
+  <g transform="translate(40, 30)">
+    <rect width="520" height="300" rx="12" fill="#042f2e" stroke="#115e59" stroke-width="1.5"/>
+    <circle cx="25" cy="22" r="5" fill="#ef4444"/>
+    <circle cx="42" cy="22" r="5" fill="#f59e0b"/>
+    <circle cx="59" cy="22" r="5" fill="#10b981"/>
+    <rect x="85" y="14" width="200" height="16" rx="8" fill="#134e4a"/>
+    <line x1="0" y1="42" x2="520" y2="42" stroke="#115e59" stroke-width="1"/>
+
+    <!-- Kanban Column 1 -->
+    <rect x="25" y="60" width="145" height="220" rx="8" fill="#0f3d39"/>
+    <rect x="35" y="70" width="60" height="12" rx="4" fill="#5eead4"/>
+    <rect x="35" y="95" width="125" height="40" rx="6" fill="#134e4a"/>
+    <rect x="45" y="108" width="80" height="8" rx="4" fill="#99f6e4"/>
+    <rect x="35" y="145" width="125" height="50" rx="6" fill="#134e4a"/>
+    <rect x="45" y="158" width="95" height="8" rx="4" fill="#99f6e4"/>
+    <rect x="45" y="173" width="50" height="8" rx="4" fill="#2dd4bf"/>
+
+    <!-- Kanban Column 2 -->
+    <rect x="187" y="60" width="145" height="220" rx="8" fill="#0f3d39"/>
+    <rect x="197" y="70" width="75" height="12" rx="4" fill="#38bdf8"/>
+    <rect x="197" y="95" width="125" height="55" rx="6" fill="#134e4a"/>
+    <rect x="207" y="108" width="90" height="8" rx="4" fill="#bae6fd"/>
+    <rect x="207" y="125" width="60" height="8" rx="4" fill="#38bdf8"/>
+
+    <!-- Kanban Column 3 -->
+    <rect x="350" y="60" width="145" height="220" rx="8" fill="#0f3d39"/>
+    <rect x="360" y="70" width="50" height="12" rx="4" fill="#4ade80"/>
+    <rect x="360" y="95" width="125" height="40" rx="6" fill="#134e4a"/>
+    <rect x="370" y="108" width="75" height="8" rx="4" fill="#bbf7d0"/>
+    <rect x="360" y="145" width="125" height="40" rx="6" fill="#134e4a"/>
+    <rect x="370" y="158" width="90" height="8" rx="4" fill="#bbf7d0"/>
+  </g>
+</svg>

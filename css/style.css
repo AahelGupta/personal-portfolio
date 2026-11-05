@@ -1,0 +1,1040 @@
+/* ==========================================================================
+   PERSONAL PORTFOLIO STYLESHEET
+   Assignment 1: Responsive Personal Portfolio Website
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Reset & Variables (Box Model, Fonts, Colors)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Color Palette */
+    --color-bg-main: #0a0f1d;
+    --color-bg-surface: #111827;
+    --color-bg-card: #1f293d;
+    --color-bg-card-hover: #26334d;
+    --color-primary: #6366f1;
+    --color-primary-hover: #4f46e5;
+    --color-secondary: #06b6d4;
+    --color-accent: #a855f7;
+    --color-text-main: #f8fafc;
+    --color-text-muted: #94a3b8;
+    --color-text-dim: #64748b;
+    --color-border: #334155;
+    --color-border-focus: #818cf8;
+    --color-badge-bg: rgba(99, 102, 241, 0.15);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+    --gradient-card: linear-gradient(145deg, #1e293b 0%, #111827 100%);
+    
+    /* Typography */
+    --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Box Model & Layout */
+    --max-width: 1200px;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 35px rgba(99, 102, 241, 0.35);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s ease;
+}
+
+/* Universal Box Model Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--color-bg-main);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Global Container (Flexbox Helper) */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Section Headings & Header Styling */
+.section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    background-color: var(--color-badge-bg);
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. Header & Navigation (Flexbox Layout)
+   -------------------------------------------------------------------------- */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(10, 15, 29, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    transition: var(--transition-normal);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    transition: var(--transition-fast);
+}
+
+.logo span {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+/* Flexbox Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 0.4rem 0;
+    transition: color var(--transition-fast);
+}
+
+/* Animated Underline Hover Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-normal);
+    border-radius: 2px;
+}
+
+.nav-link:hover {
+    color: var(--color-text-main);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-link.active {
+    color: #a5b4fc;
+}
+
+/* --------------------------------------------------------------------------
+   3. Buttons & Interactive Links (Hover Effects & Transitions)
+   -------------------------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.6rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), background-color var(--transition-normal);
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+    filter: brightness(1.1);
+}
+
+.btn-secondary {
+    background-color: var(--color-bg-card);
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-bg-card-hover);
+    border-color: #64748b;
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   4. Home / Hero Section (Flexbox & Box Model)
+   -------------------------------------------------------------------------- */
+.hero-section {
+    padding: 6rem 0 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.5rem;
+}
+
+.hero-content {
+    flex: 1 1 55%;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    color: #a5b4fc;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    margin-bottom: 1.25rem;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.03em;
+}
+
+.highlight {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.hero-desc {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 540px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+/* Quick Stats Bar (Flexbox) */
+.quick-stats {
+    display: flex;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.stat-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #a5b4fc;
+    margin-bottom: 0.2rem;
+}
+
+.stat-card p {
+    color: var(--color-text-dim);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* Hero Profile Image Wrapper */
+.hero-image-wrapper {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image-glow {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, rgba(139, 92, 246, 0.15) 50%, transparent 70%);
+    filter: blur(40px);
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.profile-image {
+    position: relative;
+    z-index: 2;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    transition: transform var(--transition-slow);
+}
+
+.profile-image:hover {
+    transform: scale(1.04) rotate(1deg);
+}
+
+/* --------------------------------------------------------------------------
+   5. About Me Section (Flexbox, Lists, Box Model)
+   -------------------------------------------------------------------------- */
+.about-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-surface);
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-bio {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    box-shadow: var(--shadow-md);
+}
+
+.about-bio h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-main);
+}
+
+.about-bio p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+}
+
+/* Flexbox List Layout for Unordered & Ordered Lists */
+.lists-wrapper {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.list-box {
+    flex: 1;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    transition: border-color var(--transition-normal);
+}
+
+.list-box:hover {
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.list-box h4 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: #a5b4fc;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.custom-list {
+    padding-left: 1.2rem;
+    color: var(--color-text-muted);
+}
+
+.custom-list li {
+    margin-bottom: 0.6rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: color var(--transition-fast);
+}
+
+.custom-list li:hover {
+    color: var(--color-text-main);
+}
+
+.ordered-list {
+    padding-left: 1.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Skills Section & Table (Table Selectors, Hover Effects)
+   -------------------------------------------------------------------------- */
+.skills-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-main);
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.skills-table thead {
+    background: linear-gradient(90deg, #1e293b, #0f172a);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.skills-table th {
+    padding: 1.2rem 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.skills-table td {
+    padding: 1.15rem 1.5rem;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.6);
+    vertical-align: middle;
+    transition: background-color var(--transition-fast);
+}
+
+/* Zebra striping & Row Hover Effect */
+.skills-table tbody tr:nth-child(even) {
+    background-color: rgba(30, 41, 59, 0.35);
+}
+
+.skills-table tbody tr:hover {
+    background-color: rgba(99, 102, 241, 0.12);
+}
+
+.skills-table tbody tr:hover td {
+    color: var(--color-text-main);
+}
+
+/* Progress bar inside table */
+.progress-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    min-width: 140px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+.progress-bar-wrap span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+/* Status Badges */
+.badge-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.badge-status.expert {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-status.advanced {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.badge-status.intermediate {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   7. Projects Section (Flexbox Grid, Card Hover Effects)
+   -------------------------------------------------------------------------- */
+.projects-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-surface);
+}
+
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.project-card {
+    flex: 1 1 calc(33.333% - 2rem);
+    min-width: 300px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* Project Card Hover State */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg), 0 10px 30px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.project-img-box {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #0b0f19;
+}
+
+.project-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.project-card:hover .project-img-box img {
+    transform: scale(1.05);
+}
+
+.project-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--color-border);
+    color: #38bdf8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+}
+
+.project-content {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--color-text-main);
+    margin-bottom: 0.75rem;
+}
+
+.project-content p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+}
+
+/* Tech Badges List */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tags li {
+    background-color: rgba(15, 23, 42, 0.7);
+    color: #a5b4fc;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Hyperlinks within projects */
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.link-item {
+    color: #cbd5e1;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.link-item:hover {
+    color: #6366f1;
+    transform: translateX(3px);
+}
+
+.demo-link {
+    color: #38bdf8;
+}
+
+.demo-link:hover {
+    color: #7dd3fc;
+}
+
+/* --------------------------------------------------------------------------
+   8. Contact Section & Form (Flexbox, Box Model, Transitions)
+   -------------------------------------------------------------------------- */
+.contact-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-main);
+}
+
+.contact-wrapper {
+    display: flex;
+    gap: 3.5rem;
+    align-items: flex-start;
+}
+
+/* Contact Info Column */
+.contact-info {
+    flex: 1 1 40%;
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.contact-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.contact-info > p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.info-item h4 {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    margin-bottom: 0.2rem;
+}
+
+.info-item p, .info-item p a {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.info-item p a:hover {
+    color: #6366f1;
+}
+
+.availability-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1.25rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    border-radius: var(--radius-md);
+    font-size: 0.88rem;
+    color: #4ade80;
+    font-weight: 500;
+}
+
+.pulse-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #22c55e;
+}
+
+/* Contact Form Container & Controls */
+.form-container {
+    flex: 1 1 60%;
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.required {
+    color: #f43f5e;
+}
+
+/* Input, Textarea, and Focus States */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.85rem 1.15rem;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-main);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--color-text-dim);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-border-focus);
+    background-color: #243048;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* --------------------------------------------------------------------------
+   9. Footer (Flexbox, Links, Border)
+   -------------------------------------------------------------------------- */
+.footer {
+    background-color: #080c17;
+    border-top: 1px solid var(--color-border);
+    padding: 2.5rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer-content p {
+    color: var(--color-text-dim);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 1.75rem;
+}
+
+.footer-links a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   10. Responsive Design (@media queries)
+   -------------------------------------------------------------------------- */
+/* Tablet Devices (max-width: 992px) */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .quick-stats {
+        justify-content: center;
+    }
+
+    .project-card {
+        flex: 1 1 calc(50% - 1.5rem);
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-info, .form-container {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .profile-image {
+        width: 240px;
+        height: 240px;
+    }
+
+    .image-glow {
+        width: 240px;
+        height: 240px;
+    }
+
+    .lists-wrapper {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about-bio {
+        padding: 2rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .project-card {
+        flex: 1 1 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .quick-stats {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .form-container, .contact-info {
+        padding: 1.5rem;
+    }
+}

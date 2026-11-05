@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="uiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#7e22ce"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="340" rx="14" fill="url(#uiBg)"/>
+  <g transform="translate(40, 25)">
+    <rect width="520" height="290" rx="10" fill="#3b0764" stroke="#9333ea" stroke-width="1.5"/>
+    <circle cx="25" cy="20" r="5" fill="#ef4444"/><circle cx="42" cy="20" r="5" fill="#f59e0b"/><circle cx="59" cy="20" r="5" fill="#10b981"/>
+    <rect x="85" y="12" width="220" height="16" rx="8" fill="#581c87"/>
+    <line x1="0" y1="38" x2="520" y2="38" stroke="#9333ea" stroke-width="1"/>
+    <!-- UI Components Demo -->
+    <rect x="25" y="55" width="220" height="100" rx="8" fill="#581c87"/>
+    <circle cx="55" cy="85" r="16" fill="#c084fc"/>
+    <rect x="85" y="75" width="100" height="10" rx="3" fill="#f3e8ff"/>
+    <rect x="85" y="92" width="60" height="8" rx="2" fill="#d8b4fe"/>
+    <rect x="40" y="120" width="80" height="22" rx="4" fill="#a855f7"/>
+    <rect x="130" y="120" width="80" height="22" rx="4" fill="#3b0764"/>
+    <!-- Form Controls UI -->
+    <rect x="270" y="55" width="225" height="100" rx="8" fill="#581c87"/>
+    <rect x="285" y="70" width="195" height="28" rx="4" fill="#3b0764" stroke="#a855f7" stroke-width="1"/>
+    <rect x="285" y="110" width="90" height="28" rx="4" fill="#a855f7"/>
+    <rect x="390" y="110" width="90" height="28" rx="4" fill="#3b0764"/>
+    <!-- Bottom Grid Layout -->
+    <rect x="25" y="170" width="470" height="95" rx="8" fill="#581c87"/>
+    <rect x="40" y="185" width="135" height="65" rx="6" fill="#7e22ce"/>
+    <rect x="190" y="185" width="135" height="65" rx="6" fill="#7e22ce"/>
+    <rect x="340" y="185" width="140" height="65" rx="6" fill="#7e22ce"/>
+  </g>
+</svg>

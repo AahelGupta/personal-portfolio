@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="abnbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#be123c"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="340" rx="14" fill="url(#abnbBg)"/>
+  <g transform="translate(40, 25)">
+    <rect width="520" height="290" rx="10" fill="#4c0519" stroke="#9f1239" stroke-width="1.5"/>
+    <circle cx="25" cy="20" r="5" fill="#ef4444"/><circle cx="42" cy="20" r="5" fill="#f59e0b"/><circle cx="59" cy="20" r="5" fill="#10b981"/>
+    <rect x="85" y="12" width="220" height="16" rx="8" fill="#881337"/>
+    <line x1="0" y1="38" x2="520" y2="38" stroke="#9f1239" stroke-width="1"/>
+    <!-- Listing cards -->
+    <rect x="25" y="55" width="225" height="210" rx="8" fill="#881337"/>
+    <rect x="35" y="65" width="205" height="120" rx="6" fill="#be123c"/>
+    <rect x="35" y="195" width="130" height="10" rx="3" fill="#ffe4e6"/>
+    <rect x="35" y="212" width="70" height="10" rx="3" fill="#fecdd3"/>
+    <rect x="35" y="232" width="90" height="14" rx="3" fill="#fda4af"/>
+    <rect x="270" y="55" width="225" height="210" rx="8" fill="#881337"/>
+    <rect x="280" y="65" width="205" height="120" rx="6" fill="#be123c"/>
+    <rect x="280" y="195" width="130" height="10" rx="3" fill="#ffe4e6"/>
+    <rect x="280" y="212" width="70" height="10" rx="3" fill="#fecdd3"/>
+    <rect x="280" y="232" width="90" height="14" rx="3" fill="#fda4af"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "Responsive Personal Portfolio Website - Assignment 1",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "html5",
+    "css3",
+    "responsive",
+    "assignment"
+  ],
+  "author": "Aahel",
+  "license": "ISC"
+}

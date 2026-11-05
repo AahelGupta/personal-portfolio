@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd5b8"/>
+      <stop offset="100%" stop-color="#f5b895"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1e2f"/>
+      <stop offset="100%" stop-color="#2d2d44"/>
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1e1b4b" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Circular Background -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGrad)" filter="url(#shadow)"/>
+
+  <!-- Decorative Orbit Rings -->
+  <circle cx="200" cy="200" r="170" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.3"/>
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#a5b4fc" stroke-width="1" opacity="0.4"/>
+
+  <!-- Developer Silhouette / Character -->
+  <!-- Clothes / Torso -->
+  <path d="M 100 370 C 100 300, 140 270, 200 270 C 260 270, 300 300, 300 370 Z" fill="url(#shirtGrad)"/>
+  <!-- Collar Accent -->
+  <polygon points="175,270 200,305 225,270 200,285" fill="#4f46e5" opacity="0.8"/>
+
+  <!-- Neck -->
+  <rect x="182" y="220" width="36" height="60" rx="10" fill="url(#skinGrad)"/>
+
+  <!-- Face -->
+  <ellipse cx="200" cy="190" rx="55" ry="65" fill="url(#skinGrad)"/>
+
+  <!-- Hair Base & Top -->
+  <path d="M 142 180 C 138 120, 160 100, 200 100 C 245 100, 262 120, 258 180 C 250 150, 230 135, 200 135 C 165 135, 148 155, 142 180 Z" fill="url(#hairGrad)"/>
+  <!-- Front Hair Tuft -->
+  <path d="M 155 125 C 175 105, 220 110, 235 135 C 215 130, 185 125, 155 125 Z" fill="#2d2d44"/>
+
+  <!-- Modern Glasses -->
+  <rect x="156" y="172" width="38" height="24" rx="6" fill="#0f172a" fill-opacity="0.1" stroke="#0f172a" stroke-width="3.5"/>
+  <rect x="206" y="172" width="38" height="24" rx="6" fill="#0f172a" fill-opacity="0.1" stroke="#0f172a" stroke-width="3.5"/>
+  <line x1="194" y1="184" x2="206" y2="184" stroke="#0f172a" stroke-width="3.5"/>
+  <line x1="145" y1="182" x2="156" y2="184" stroke="#0f172a" stroke-width="3"/>
+  <line x1="244" y1="184" x2="255" y2="182" stroke="#0f172a" stroke-width="3"/>
+
+  <!-- Smile -->
+  <path d="M 188 222 Q 200 234 212 222" fill="none" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Tech Floating Badges -->
+  <g transform="translate(45, 120)">
+    <rect width="60" height="28" rx="14" fill="#0f172a" opacity="0.85"/>
+    <text x="30" y="18" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">&lt;code&gt;</text>
+  </g>
+  <g transform="translate(295, 220)">
+    <rect width="55" height="28" rx="14" fill="#0f172a" opacity="0.85"/>
+    <text x="27.5" y="18" fill="#4ade80" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">CSS3</text>
+  </g>
+</svg>

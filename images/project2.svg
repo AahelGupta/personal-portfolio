@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="p2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#fb7185"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="360" rx="16" fill="url(#p2Grad)"/>
+
+  <!-- Browser Window Mockup -->
+  <g transform="translate(40, 30)">
+    <rect width="520" height="300" rx="12" fill="#0b0f19" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="25" cy="22" r="5" fill="#ef4444"/>
+    <circle cx="42" cy="22" r="5" fill="#f59e0b"/>
+    <circle cx="59" cy="22" r="5" fill="#10b981"/>
+    <rect x="85" y="14" width="220" height="16" rx="8" fill="#1e293b"/>
+    <line x1="0" y1="42" x2="520" y2="42" stroke="#334155" stroke-width="1"/>
+
+    <!-- E-Commerce Store UI -->
+    <!-- Hero Banner -->
+    <rect x="25" y="60" width="470" height="75" rx="8" fill="#1e293b"/>
+    <rect x="45" y="78" width="160" height="16" rx="4" fill="#f43f5e"/>
+    <rect x="45" y="102" width="110" height="10" rx="3" fill="#94a3b8"/>
+    <rect x="375" y="75" width="90" height="45" rx="6" fill="#334155"/>
+
+    <!-- Product Grid Cards -->
+    <rect x="25" y="150" width="145" height="130" rx="8" fill="#1e293b"/>
+    <rect x="40" y="165" width="115" height="65" rx="6" fill="#334155"/>
+    <rect x="40" y="240" width="70" height="10" rx="3" fill="#cbd5e1"/>
+    <rect x="40" y="256" width="45" height="10" rx="3" fill="#fb7185"/>
+
+    <rect x="187" y="150" width="145" height="130" rx="8" fill="#1e293b"/>
+    <rect x="202" y="165" width="115" height="65" rx="6" fill="#334155"/>
+    <rect x="202" y="240" width="70" height="10" rx="3" fill="#cbd5e1"/>
+    <rect x="202" y="256" width="45" height="10" rx="3" fill="#fb7185"/>
+
+    <rect x="350" y="150" width="145" height="130" rx="8" fill="#1e293b"/>
+    <rect x="365" y="165" width="115" height="65" rx="6" fill="#334155"/>
+    <rect x="365" y="240" width="70" height="10" rx="3" fill="#cbd5e1"/>
+    <rect x="365" y="256" width="45" height="10" rx="3" fill="#fb7185"/>
+  </g>
+</svg>
