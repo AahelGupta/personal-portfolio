@@ -13,6 +13,9 @@
 </head>
 <body>
 
+    <!-- Interactive Background Canvas (Constellation & Cyber Grid) -->
+    <canvas id="cyber-canvas"></canvas>
+
     <!-- Header & Navigation Bar -->
     <header class="header">
         <nav class="navbar">
@@ -35,12 +38,14 @@
         <section id="home" class="hero-section">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <span class="badge">👋 Welcome to my portfolio</span>
+                    <span class="badge"><span class="wave-hand">👋</span> Welcome to my portfolio</span>
                     <h1 class="hero-title">Hi, I'm <span class="highlight">Aahel Gupta</span></h1>
-                    <h2 class="hero-subtitle">Frontend &amp; Full Stack Web Developer</h2>
+                    <div class="typing-container">
+                        <h2 class="hero-subtitle"><span id="typing-text">Frontend &amp; Full Stack Developer</span><span class="typing-cursor"></span></h2>
+                    </div>
                     <p class="hero-desc">
-                        Passionate software developer building performant web applications, modern responsive interfaces, 
-                        and intuitive user experiences using React 18, Tailwind CSS v4, JavaScript, HTML5, and CSS3.
+                        B.Tech Computer Science Engineering student @ SNU. Building performant web applications, 
+                        responsive user interfaces, and modular backend architectures with React 18, Tailwind CSS v4, JavaScript, and Python.
                     </p>
                     <div class="hero-cta">
                         <a href="#projects" class="btn btn-primary">View GitHub Projects</a>
@@ -111,6 +116,12 @@
                                     <li>Continuous Open Source Projects on GitHub</li>
                                 </ol>
                             </div>
+                        </div>
+
+                        <!-- Animated GitHub Contribution Graph Snake -->
+                        <div class="activity-banner">
+                            <h3>🐍 GitHub Contribution Activity &amp; Snake</h3>
+                            <img src="https://raw.githubusercontent.com/AahelGupta/AahelGupta/output/github-contribution-grid-snake.svg" alt="Aahel Gupta Contribution Graph Snake Animation">
                         </div>
                     </div>
                 </div>
@@ -541,6 +552,9 @@
             </ul>
         </div>
     </footer>
+
+    <!-- Interactive Animations & Cyber Particles Script -->
+    <script src="js/animations.js"></script>
 
 </body>
 </html>

@@ -346,7 +346,75 @@ body {
     letter-spacing: 0.05em;
 }
 
-/* Hero Profile Image Wrapper */
+/* --------------------------------------------------------------------------
+   Interactive Cyber Background Canvas & Keyframe Animations
+   -------------------------------------------------------------------------- */
+#cyber-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+}
+
+main, header, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Waving Hand Animation */
+.wave-hand {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: waveAnimation 2.2s infinite;
+}
+
+@keyframes waveAnimation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Animated Typing Subtitle */
+.typing-container {
+    min-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.hero-subtitle {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #38bdf8;
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.3em;
+    background-color: #38bdf8;
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Rotating Ambient Gradient Glow Behind Profile Image */
 .hero-image-wrapper {
     flex: 1 1 45%;
     display: flex;
@@ -357,12 +425,65 @@ body {
 
 .image-glow {
     position: absolute;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, rgba(139, 92, 246, 0.15) 50%, transparent 70%);
-    filter: blur(40px);
+    width: 340px;
+    height: 340px;
+    background: conic-gradient(from 180deg at 50% 50%, #4f46e5 0deg, #06b6d4 120deg, #a855f7 240deg, #4f46e5 360deg);
+    filter: blur(45px);
     z-index: 1;
     border-radius: 50%;
+    opacity: 0.6;
+    animation: rotateGlow 12s linear infinite;
+}
+
+@keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Floating Card Animation */
+@keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+.floating-effect {
+    animation: floatY 5s ease-in-out infinite;
+}
+
+/* Scroll Reveal Fade & Slide Up */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* GitHub Activity & Snake Showcase Card */
+.activity-banner {
+    margin-top: 3rem;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.activity-banner h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: #a5b4fc;
+    margin-bottom: 1.25rem;
+}
+
+.activity-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
 }
 
 .profile-image {
