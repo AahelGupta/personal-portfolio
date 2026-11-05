@@ -486,6 +486,44 @@ main, header, footer {
     border-radius: var(--radius-md);
 }
 
+/* Animated Showcase Banners from Aahel's Repos */
+.repo-effects-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.effect-card {
+    flex: 1 1 calc(50% - 1.5rem);
+    min-width: 280px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    text-align: center;
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.effect-card:hover {
+    transform: translateY(-4px);
+    border-color: #38bdf8;
+}
+
+.effect-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: #38bdf8;
+    margin-bottom: 0.75rem;
+}
+
+.banner-effect-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    display: block;
+}
+
 .profile-image {
     position: relative;
     z-index: 2;

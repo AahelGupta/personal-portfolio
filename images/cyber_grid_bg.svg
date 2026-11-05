@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="100%" height="180">
+  <defs>
+    <linearGradient id="cyberBgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#020408"/>
+    </linearGradient>
+
+    <linearGradient id="gridLineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#8b5cf6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <style>
+      .grid-line {
+        stroke: url(#gridLineGrad);
+        stroke-width: 1.5;
+      }
+      .grid-h {
+        animation: gridMoveH 4s linear infinite;
+      }
+      @keyframes gridMoveH {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(40px); }
+      }
+      .horizon-glow {
+        animation: pulseHorizon 3s ease-in-out infinite alternate;
+      }
+      @keyframes pulseHorizon {
+        0% { opacity: 0.4; }
+        100% { opacity: 0.9; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#cyberBgGrad)" rx="12"/>
+
+  <!-- Horizon Glow -->
+  <ellipse cx="600" cy="120" rx="500" ry="60" fill="#8b5cf6" opacity="0.25" class="horizon-glow" />
+  <ellipse cx="600" cy="120" rx="300" ry="30" fill="#38bdf8" opacity="0.3" class="horizon-glow" />
+
+  <!-- Vertical Perspective Gridlines -->
+  <line x1="600" y1="120" x2="-200" y2="240" class="grid-line" />
+  <line x1="600" y1="120" x2="0" y2="240" class="grid-line" />
+  <line x1="600" y1="120" x2="200" y2="240" class="grid-line" />
+  <line x1="600" y1="120" x2="400" y2="240" class="grid-line" />
+  <line x1="600" y1="120" x2="600" y2="240" class="grid-line" />
+  <line x1="600" y1="120" x2="800" y2="240" class="grid-line" />
+  <line x1="600" y1="120" x2="1000" y2="240" class="grid-line" />
+  <line x1="600" y1="120" x2="1200" y2="240" class="grid-line" />
+  <line x1="600" y1="120" x2="1400" y2="240" class="grid-line" />
+
+  <!-- Moving Horizontal Gridlines -->
+  <g class="grid-h">
+    <line x1="0" y1="130" x2="1200" y2="130" class="grid-line" />
+    <line x1="0" y1="150" x2="1200" y2="150" class="grid-line" />
+    <line x1="0" y1="180" x2="1200" y2="180" class="grid-line" />
+    <line x1="0" y1="220" x2="1200" y2="220" class="grid-line" />
+  </g>
+</svg>
