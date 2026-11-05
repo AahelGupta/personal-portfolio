@@ -2,6 +2,9 @@
 
 A modern, responsive personal portfolio website developed using clean, semantic **HTML5** and **CSS3**.
 
+- 🌐 **Live Website (GitHub Pages):** [https://aahelgupta.github.io/personal-portfolio/](https://aahelgupta.github.io/personal-portfolio/)
+- 🐙 **GitHub Repository:** [https://github.com/AahelGupta/personal-portfolio](https://github.com/AahelGupta/personal-portfolio)
+
 ---
 
 ## 🚀 How to Run in VS Code with `npm run dev`
