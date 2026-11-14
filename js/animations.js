@@ -189,4 +189,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* --------------------------------------------------------------------------
+       5. Interactive Project Category Filtering
+       -------------------------------------------------------------------------- */
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    if (filterButtons.length > 0 && projectCards.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filterValue === 'all' || category === filterValue || (filterValue === 'react' && category.includes('react'))) {
+                        card.classList.remove('hidden');
+                        card.classList.add('fade-in');
+                        setTimeout(() => card.classList.remove('fade-in'), 400);
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+
 });

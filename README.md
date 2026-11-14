@@ -71,12 +71,13 @@ The site will start at **`http://localhost:3000/`** and automatically open in yo
 | 1 | **News-Aggregator** | `React 18` `Tailwind v4` `Vite` | Multi-source real-time news hub (Guardian, BBC, Hacker News), text-to-speech, offline caching | [Repository](https://github.com/AahelGupta/News-Aggregator) |
 | 2 | **Recipe-Finder** | `React 18` `Tailwind v4` `Vite` | Interactive culinary platform with pantry matching and meal planner | [Repository](https://github.com/AahelGupta/Recipe-Finder) |
 | 3 | **Social-Media** | `React 18` `Context API` `Tailwind` | Twitter/X clone with feeds, post creation, hashtag search, and dark mode | [Repository](https://github.com/AahelGupta/Social-Media) |
-| 4 | **Code-Editor** | `HTML5` `CSS3` `JavaScript` | In-browser live frontend code editor with real-time preview | [Repository](https://github.com/AahelGupta/Code-Editor) |
-| 5 | **Mini-Ecommerce** | `JavaScript` `CSS Flexbox` | Online storefront with product catalog and shopping cart | [Repository](https://github.com/AahelGupta/Mini-Ecommerce) |
-| 6 | **Employee-And-Admin-Dashboard** | `JavaScript` `CSS Grid` | Role-based task delegation and tracking dashboard | [Repository](https://github.com/AahelGupta/Employee-And-Admin-Dashboard) |
-| 7 | **airbnb-clone** | `JavaScript` `CSS3` | Responsive accommodation rental listing clone | [Repository](https://github.com/AahelGupta/airbnb-clone) |
-| 8 | **Student-Management-System** | `Python` `Web UI` | Academic student dashboard with attendance records & authorization | [Repository](https://github.com/AahelGupta/Student-Management-System) |
-| 9 | **UI-Project** | `JavaScript` `CSS3 Animations` | Component design system with responsive layouts | [Repository](https://github.com/AahelGupta/UI-Project) |
+| 4 | **Employee-And-Admin-Dashboard** | `React.js` `RBAC` `Context API` | Role-based task delegation and tracking dashboard with localStorage auth | [Repository](https://github.com/AahelGupta/Employee-And-Admin-Dashboard) |
+| 5 | **airbnb-clone** | `React 18` `Tailwind CSS` `Vite` | Responsive accommodation rental listing clone with live booking calculation | [Repository](https://github.com/AahelGupta/airbnb-clone) |
+| 6 | **Mini-Ecommerce** | `React.js` `Tailwind CSS` `Vite` | Online storefront with product catalog and slide-over shopping cart | [Repository](https://github.com/AahelGupta/Mini-Ecommerce) |
+| 7 | **Code-Editor** | `HTML5` `CSS3` `JavaScript` | In-browser live frontend code editor with sandboxed iframe preview | [Repository](https://github.com/AahelGupta/Code-Editor) |
+| 8 | **Student-Management-System** | `Python` `OOP Architecture` | Academic student administration engine with GPA analytics & leaderboards | [Repository](https://github.com/AahelGupta/Student-Management-System) |
+| 9 | **UI-Project** | `React.js` `Tailwind CSS` `Design System` | Component design system with WAI-ARIA accessibility & dark mode | [Repository](https://github.com/AahelGupta/UI-Project) |
+| 10 | **ai-assistant** | `FastAPI` `React.js` `Python 3.10+` | Full-stack multi-modal AI assistant architecture and scaffolding | [Repository](https://github.com/AahelGupta/ai-assistant) |
 
 ---
 
